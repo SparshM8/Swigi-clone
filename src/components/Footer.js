@@ -1,6 +1,6 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedinIn, FaInstagram, FaFacebook, FaPinterest, FaTwitter } from 'react-icons/fa';
+import { FaLinkedinIn, FaInstagram, FaFacebook, FaPinterest } from 'react-icons/fa';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -79,8 +79,9 @@ export const Footer = () => {
                         <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" className="text-white-500 hover:text-red-700 transition duration-300 ease-in-out">
                             <FaPinterest size={24} />
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white-500 hover:text-blue-400 transition duration-300 ease-in-out">
-                            <FaTwitter size={24} />
+                        <a href="https://x.com/Swiggy" target="_blank" rel="noopener noreferrer" className="text-white-500 hover:text-gray-300 transition duration-300 ease-in-out" aria-label="X (formerly Twitter)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                        </a>
                         </a>
                     </div>
                 </div>
