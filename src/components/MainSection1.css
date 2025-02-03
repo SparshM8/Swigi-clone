@@ -116,3 +116,30 @@
   
   
   
+
+/* Issue #73: Enhanced hover and focus effects */
+.input-location input,
+.input-menu input {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input-location input:focus,
+.input-menu input:focus {
+  outline: 2px solid #ff5200;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.15);
+}
+
+button {
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
