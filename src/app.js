@@ -17,14 +17,11 @@ import Login from './components/Login';
 import Footer from './components/Footer';
 import Instamart from './components/Instamart';
 import Signup from './components/Signup';
-
 import ContactForm from './components/ContactForm';
 import SidePanelModal from './components/SidePanelModal';
 import BlogSection from './components/BlogSection';
 import Collection from './components/Collection';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FooterSection from './components/Footer';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -47,7 +44,6 @@ function App() {
       <MainSection3 />
       <MainSection4 />
       <MainSection5 />
-
       {/* Best Sections */}
       <BestPlacesSection />
       <BestGrocery />
