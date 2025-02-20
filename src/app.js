@@ -24,7 +24,7 @@ import BlogSection from './components/BlogSection';
 import Collection from './components/Collection';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FooterSection from './components/FooterSection';
+import FooterSection from './components/Footer';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -35,8 +35,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* Header */}
-      <Header />
+      {/* Header - Pass toggleSidebar as prop */}
+      <Header toggleSidebar={toggleSidebar} />
 
       {/* Sidebar Modal */}
       <SidePanelModal isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
@@ -57,7 +57,7 @@ function App() {
         <Route path="/Contact" element={<ContactUs />} />
         <Route path="/Contact-Form" element={<ContactForm />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
+        {/* <Route path="/Signup" element={<Signup />} /> */}
         <Route path="/Instamart" element={<Instamart />} />
         <Route path="/BlogSection" element={<BlogSection />} />
         <Route path="/Collection" element={<Collection />} />
