@@ -14,10 +14,10 @@ const MainSection1= () => {
           <div className="search-bar">
             <div className="input-location">
               
-              <input type="search" placeholder="Enter your delivery location" />
+              <input type="search" className='text-black font-semibold'  placeholder="Enter your delivery location" />
             </div>
             <div className="input-menu">
-              <input type="search" placeholder="Search for restaurant, item or more" />
+              <input type="search" className='text-black font-semibold' placeholder="Search for restaurant, item or more" />
             </div>
           </div>
         </div>
