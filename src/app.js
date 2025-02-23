@@ -17,14 +17,11 @@ import Login from './components/Login';
 import Footer from './components/Footer';
 import Instamart from './components/Instamart';
 import Signup from './components/Signup';
-
 import ContactForm from './components/ContactForm';
 import SidePanelModal from './components/SidePanelModal';
 import BlogSection from './components/BlogSection';
 import Collection from './components/Collection';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FooterSection from './components/FooterSection';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -35,8 +32,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* Header */}
-      <Header />
+      {/* Header - Pass toggleSidebar as prop */}
+      <Header toggleSidebar={toggleSidebar} />
 
       {/* Sidebar Modal */}
       <SidePanelModal isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
@@ -47,7 +44,6 @@ function App() {
       <MainSection3 />
       <MainSection4 />
       <MainSection5 />
-
       {/* Best Sections */}
       <BestPlacesSection />
       <BestGrocery />
@@ -57,7 +53,7 @@ function App() {
         <Route path="/Contact" element={<ContactUs />} />
         <Route path="/Contact-Form" element={<ContactForm />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
+        {/* <Route path="/Signup" element={<Signup />} /> */}
         <Route path="/Instamart" element={<Instamart />} />
         <Route path="/BlogSection" element={<BlogSection />} />
         <Route path="/Collection" element={<Collection />} />

@@ -1,8 +1,17 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import './Header.css'; // Make sure to create a corresponding CSS file
+import { useNavigate } from "react-router-dom";
+
 
 function Header({ toggleSidebar }) {
+
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    toggleSidebar(); 
+    navigate('/Signup'); 
+  };
   return (
     <header>
       <div className="nav-bar clearfix">
@@ -20,8 +29,8 @@ function Header({ toggleSidebar }) {
                 Get the App <ArrowUpRight />
               </a>
             </div>
-            <div className="sign-in" onClick={toggleSidebar}>
-              Sign in
+            <div className="sign-up" onClick={handleSignUpClick}>
+              Sign In
             </div>
           </div>
         </div>

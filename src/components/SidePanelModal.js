@@ -4,10 +4,10 @@ import Login from "./Login";
 import Signup from "./Signup";
 
 const SidePanel = ({ isOpen, toggleSidebar }) => {
-  const [mode, setMode] = useState("login"); 
+  const [mode, setMode] = useState("login");
 
   const toggleMode = () => {
-    setMode(mode === "login" ? "Signup" : "login");
+    setMode(mode === "login" ? "signup" : "login"); // Fix case sensitivity
   };
 
   return (
@@ -16,13 +16,12 @@ const SidePanel = ({ isOpen, toggleSidebar }) => {
 
       <div className={`modal-container ${isOpen ? "open" : ""}`}>
         <div className="modal-content">
-          <span className="icon-close" onClick={toggleSidebar}>
-            ✖
-          </span>
+          <span className="icon-close" onClick={toggleSidebar}>✖</span>
+
           <div className="modal-header">
             <div className="flex-col">
               <div className="modal-title">
-                {mode === "login" ? "Login" : "Signup"}
+                {mode === "login" ? "Login" : "Sign up"}
               </div>
               <div className="modal-or-create">
                 or{" "}
@@ -31,7 +30,7 @@ const SidePanel = ({ isOpen, toggleSidebar }) => {
                     toggleMode();
                   }}
                 >
-                  {mode === "login" ? "create an account" : "login"}
+                  {mode === "login" ? "create an account" : "login to your account"}
                 </a>
               </div>
             </div>
@@ -44,7 +43,10 @@ const SidePanel = ({ isOpen, toggleSidebar }) => {
             />
           </div>
 
-          {mode === "login" ? <Login /> : <Signup />}
+          {/* Ensure form has proper layout */}
+          <div className="modal-form-wrapper">
+            {mode === "login" ? <Login /> : <Signup />}
+          </div>
         </div>
       </div>
     </>
