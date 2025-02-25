@@ -5,7 +5,7 @@ import { FaLinkedinIn, FaInstagram, FaFacebook, FaPinterest, FaTwitter } from 'r
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="flex-col items-center w-full py-2 bg-gray-900">
+        <footer className="flex-col items-center w-full py-2 bg-gray-900 mt-auto">
             <div className="max-w-screen-xl mx-auto px-4 py-8 grid gap-8 md:grid-cols-5 items-start">
                 <div className="space-y-4">
                     <div className="flex flex-col items-center">
