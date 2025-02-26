@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Signup.css";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({toggleSidebar}) => {
   const [formData, setFormData] = useState({
     mobile: "",
     name: "",
@@ -9,6 +10,7 @@ const Signup = () => {
   });
 
   const [error, setError] = useState("");
+  const navigate=useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,8 +34,12 @@ const Signup = () => {
       return;
     }
 
+    localStorage.setItem("isAuthenticated", "true");
     console.log("Signup data:", formData);
+    navigate("/");
+
     setError("");
+    toggleSidebar();
   };
 
   return (

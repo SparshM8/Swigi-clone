@@ -4,7 +4,7 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 
 
-const Login = () => {
+const Login = ({toggleSidebar }) => {
   const [mobile, setMobile] = useState(""); // Changed to 'mobile'
   const [error, setError] = useState(""); // Error state for validation
 
@@ -17,6 +17,9 @@ const Login = () => {
     }
 
     console.log("Logged in with mobile:", mobile);
+    localStorage.setItem("isAuthenticated", "true");
+    toggleSidebar();
+
   };
 
   const handleCancel = () => {

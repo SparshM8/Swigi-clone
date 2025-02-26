@@ -45,8 +45,9 @@ const SidePanel = ({ isOpen, toggleSidebar }) => {
 
           {/* Ensure form has proper layout */}
           <div className="modal-form-wrapper">
-            {mode === "login" ? <Login /> : <Signup />}
-          </div>
+  {mode === "login" ? <Login toggleSidebar={toggleSidebar} /> : <Signup toggleSidebar={toggleSidebar} />}
+</div>
+
         </div>
       </div>
     </>
