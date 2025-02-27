@@ -71,7 +71,7 @@ function App() {
 
       {/* Footer and Navbar should be outside Routes to appear on every page */}
       <Footer />
-      <BottomNavbar />
+      <BottomNavbar/>
     </div>
   );
 }
