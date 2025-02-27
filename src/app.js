@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import './index.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import BottomNavbar from './components/BottomNavbar';
 import ContactUs from './components/ContactUs';
 import Login from './components/Login';
 import Instamart from './components/Instamart';
@@ -71,7 +70,6 @@ function App() {
 
       {/* Footer and Navbar should be outside Routes to appear on every page */}
       <Footer />
-      <BottomNavbar />
     </div>
   );
 }
