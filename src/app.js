@@ -73,7 +73,7 @@ function App() {
       <Footer />
       <BottomNavbar />
     </div>
-  ); 
+  );
 }
 
 export default App;
