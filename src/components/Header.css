@@ -40,11 +40,18 @@ header {
   
   a {
     text-decoration: none !important;
-    color: rgb(255, 255, 255);
+    color: white;
+    display: inline-block; /* Needed for transform to work */
+  transition: transform 0.3s ease-in-out, text-decoration 0.3s;
+  text-decoration: none; /* Initially no underline */
     /* font-size: 20px; */
   }
+  a:hover{
+    transform: scale(1.1);
+  text-decoration: underline;
+  }
   .font a h4{
-    font-size: 17px !important;
+    font-size: 16px !important;
     font-weight: 700;
   }
   .logo{
@@ -86,6 +93,12 @@ header {
     background-color:  #ffffff;
     color: black;
     border: 1px solid #fff;
+    transition: transform 5s ease-in-out;
+    text-decoration: none;
+  }
+  .get-app:hover{
+    transform: scale(1.05);
+    text-decoration: none;
   }
   
   .sign-up {
@@ -112,5 +125,13 @@ header {
       -ms-flex-item-align: stretch;
       align-self: stretch;
       margin-top: 0;
+      
   }
-  
+  .sign-up:hover{
+    transform: scale(1.05);
+    
+  }
+  .sign-up:active{
+    background-color: lightgrey;
+    transition: background-color 0.1s;
+  }

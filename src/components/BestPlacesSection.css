@@ -33,7 +33,9 @@
   }
   
   .city-button:hover {
-    background-color: #f7f7f7;
+    background-color: #d3d3d3;
+    transform: scale(1.02);
+    color: black;
   }
   
   .show-more {
