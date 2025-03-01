@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import './index.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import BottomNavbar from './components/BottomNavbar';
+import ContactUs from './components/ContactUs';
+import Login from './components/Login';
+import Instamart from './components/Instamart';
+import ContactForm from './components/ContactForm';
+import SidePanelModal from './components/SidePanelModal';
+import BlogSection from './components/BlogSection';
+import Collection from './components/Collection';
+import PartnerWithUs from './components/PartnerWithUs';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// Import Home Page Sections
 import MainSection1 from './components/MainSection1';
 import MainSection2 from './components/MainSection2';
 import MainSection3 from './components/MainSection3';
@@ -9,18 +25,20 @@ import MainSection4 from './components/MainSection4';
 import MainSection5 from './components/MainSection5';
 import BestPlacesSection from './components/BestPlacesSection';
 import BestGrocery from './components/BestGrocery';
-import BottomNavbar from './components/BottomNavbar';
-import MobileNavbar from './components/MobileNavbar';
-import ContactUs from './components/ContactUs';
-import Login from './components/Login';
-import Footer from './components/Footer';
-import Instamart from './components/Instamart';
-import Signup from './components/Signup';
-import ContactForm from './components/ContactForm';
-import SidePanelModal from './components/SidePanelModal';
-import BlogSection from './components/BlogSection';
-import Collection from './components/Collection';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+function HomePage() {
+  return (
+    <>
+      <MainSection1 />
+      <MainSection2 />
+      <MainSection3 />
+      <MainSection4 />
+      <MainSection5 />
+      <BestPlacesSection />
+      <BestGrocery />
+    </>
+  );
+}
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -32,36 +50,27 @@ function App() {
   return (
     <div className="App">
       {/* Header */}
-      <Header />
+      <Header toggleSidebar={toggleSidebar} />
+
+      <ToastContainer />
 
       {/* Sidebar Modal */}
       <SidePanelModal isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      {/* Main Sections */}
-      <MainSection1 />
-      <MainSection2 />
-      <MainSection3 />
-      <MainSection4 />
-
-      {/* Best Sections */}
-      <BestPlacesSection />
-      <BestGrocery />
-
       {/* Routes */}
-      <Routes>
-        <Route path="/Contact" element={<ContactUs />} />
-        <Route path="/Contact-Form" element={<ContactForm />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/Instamart" element={<Instamart />} />
-        <Route path="/BlogSection" element={<BlogSection />} />
-        <Route path="/Collection" element={<Collection />} />
+      <Routes className="pt-18 pb-18">
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/contact-form" element={<ContactForm />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/partnerWithUs" element={<PartnerWithUs />} />
+        <Route path="/instamart" element={<Instamart />} />
+        <Route path="/blogSection" element={<BlogSection />} />
+        <Route path="/collection" element={<Collection />} />
       </Routes>
 
-      {/* Footer */}
+      {/* Footer and Navbar should be outside Routes to appear on every page */}
       <Footer />
-
-      {/* Bottom Navbar */}
       <BottomNavbar />
     </div>
   );
