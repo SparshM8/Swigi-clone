@@ -1,13 +1,23 @@
+﻿/* Login.css - Enhanced with hover and focus styles (Issue #83) */
+
 button {
   margin: 5px;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
   background-color: #f0f0f0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .login-container {
@@ -15,4 +25,35 @@ button:hover {
   flex-direction: column;
   width: 300px;
   margin: auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="tel"]:hover {
+  border-color: #ff5200;
+  background-color: #fff8f5;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+  border-color: #ff5200;
+  box-shadow: 0 0 0 3px rgba(255, 82, 0, 0.15);
+  background-color: #fff;
 }
