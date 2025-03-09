@@ -13,9 +13,10 @@ header {
     margin: 0;
     padding: 0;
     margin-top: 0;
-    z-index: 10;
+    z-index: 1000;
     display: block;
-    /* position: fixed; */
+    position: sticky;
+    top: 0;
   }
   
    .nav-bar {
@@ -136,3 +137,4 @@ header {
     background-color: lightgrey;
     transition: background-color 0.1s;
   }
+
